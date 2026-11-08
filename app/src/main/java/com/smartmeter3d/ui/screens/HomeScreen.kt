@@ -76,7 +76,13 @@ fun HomeScreen(onOpen: (String) -> Unit) {
                     title = stringResource(item.title),
                     icon = item.icon,
                     onClick = {
-                        onOpen(if (item.id == "settings") Routes.SETTINGS else Routes.comingSoon(item.title))
+                        onOpen(
+    when (item.id) {
+        "settings" -> Routes.SETTINGS
+        "photo" -> Routes.PHOTO
+        else -> Routes.comingSoon(item.title)
+    }
+)
                     }
                 )
             }
