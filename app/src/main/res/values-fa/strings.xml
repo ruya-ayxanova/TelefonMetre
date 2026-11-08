@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Meter 3D</string>
+    <string name="home_title">Smart Meter 3D</string>
+    <string name="menu_ar">اندازه‌گیری با AR</string>
+    <string name="menu_photo">اندازه‌گیری از عکس</string>
+    <string name="menu_wall">اندازه‌گیری دیوار</string>
+    <string name="menu_closet">اندازه‌گیری کمد</string>
+    <string name="menu_door">اندازه‌گیری در</string>
+    <string name="menu_window">اندازه‌گیری پنجره</string>
+    <string name="menu_room">اندازه‌گیری اتاق</string>
+    <string name="menu_calculator">ماشین حساب</string>
+    <string name="menu_projects">پروژه‌های ذخیره‌شده</string>
+    <string name="menu_settings">تنظیمات</string>
+    <string name="back">بازگشت</string>
+    <string name="coming_soon_title">این قابلیت هنوز آماده نیست</string>
+    <string name="coming_soon_body">این بخش در مراحل بعدی توسعه اضافه خواهد شد.</string>
+    <string name="settings_language">زبان</string>
+    <string name="language_tr">Türkçe</string>
+    <string name="language_fa">فارسی</string>
+</resources>
