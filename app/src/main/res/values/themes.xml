@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.SmartMeter3D" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">#FFFAF5E6</item>
+        <item name="android:statusBarColor">#FF1B5E3A</item>
+        <item name="android:navigationBarColor">#FFFAF5E6</item>
+    </style>
+</resources>
