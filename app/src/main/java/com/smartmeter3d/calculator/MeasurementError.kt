@@ -2,6 +2,7 @@ package com.smartmeter3d.calculator
 
 enum class MeasurementError {
     EMPTY_INPUT,
+    EMPTY_NAME,
     NOT_A_NUMBER,
     NOT_FINITE,
     NEGATIVE_VALUE,
