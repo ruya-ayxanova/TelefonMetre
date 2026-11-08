@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Meter 3D</string>
+    <string name="home_title">Smart Meter 3D</string>
+    <string name="menu_ar">AR ile ölçüm</string>
+    <string name="menu_photo">Fotoğraftan ölçüm</string>
+    <string name="menu_wall">Duvar ölçümü</string>
+    <string name="menu_closet">Dolap ölçümü</string>
+    <string name="menu_door">Kapı ölçümü</string>
+    <string name="menu_window">Pencere ölçümü</string>
+    <string name="menu_room">Oda ölçümü</string>
+    <string name="menu_calculator">Hesap makinesi</string>
+    <string name="menu_projects">Kayıtlı projeler</string>
+    <string name="menu_settings">Ayarlar</string>
+    <string name="back">Geri</string>
+    <string name="coming_soon_title">Bu özellik henüz hazır değil</string>
+    <string name="coming_soon_body">Bu bölüm sonraki geliştirme aşamalarında eklenecek.</string>
+    <string name="settings_language">Dil</string>
+    <string name="language_tr">Türkçe</string>
+    <string name="language_fa">فارسی</string>
+</resources>
