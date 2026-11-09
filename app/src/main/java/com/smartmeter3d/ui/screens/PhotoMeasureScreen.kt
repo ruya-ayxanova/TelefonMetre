@@ -1,5 +1,7 @@
 package com.smartmeter3d.ui.screens
 
+import android.Manifest
+import android.content.pm.PackageManager
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -46,11 +48,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.smartmeter3d.R
 import com.smartmeter3d.calculator.LengthUnit
 import com.smartmeter3d.database.MeasurementType
 import com.smartmeter3d.ui.components.PhotoCanvas
+import com.smartmeter3d.ui.components.SaveMeasurementDialog
 import com.smartmeter3d.ui.messageRes
 import com.smartmeter3d.viewmodel.PhotoMeasureViewModel
 import com.smartmeter3d.viewmodel.PhotoMode
@@ -68,6 +73,10 @@ fun PhotoMeasureScreen(onBack: () -> Unit, vm: PhotoMeasureViewModel = viewModel
     }
     val pickImage = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         vm.onImagePicked(uri)
+    }
+    val context = LocalContext.current
+    val cameraPermission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        if (granted) vm.prepareCameraUri()?.let { takePicture.launch(it) }
     }
     var showSave by remember { mutableStateOf(false) }
     val step = vm.step
@@ -101,7 +110,15 @@ fun PhotoMeasureScreen(onBack: () -> Unit, vm: PhotoMeasureViewModel = viewModel
         ) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
                 Button(
-                    onClick = { vm.prepareCameraUri()?.let { takePicture.launch(it) } },
+                    onClick = {
+                        val granted = ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA) ==
+                            PackageManager.PERMISSION_GRANTED
+                        if (granted) {
+                            vm.prepareCameraUri()?.let { takePicture.launch(it) }
+                        } else {
+                            cameraPermission.launch(Manifest.permission.CAMERA)
+                        }
+                    },
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(Icons.Filled.PhotoCamera, contentDescription = null)
@@ -188,7 +205,7 @@ fun PhotoMeasureScreen(onBack: () -> Unit, vm: PhotoMeasureViewModel = viewModel
         )
     }
     if (showSave) {
-        SaveDialog(
+        SaveMeasurementDialog(
             onConfirm = { name, type ->
                 showSave = false
                 vm.save(name, type)
@@ -303,54 +320,4 @@ private fun ReferenceDialog(
             TextButton(onClick = onCancel) { Text(stringResource(R.string.photo_cancel)) }
         }
     )
-}
-
-@Composable
-private fun SaveDialog(onConfirm: (String, MeasurementType) -> Unit, onCancel: () -> Unit) {
-    var name by remember { mutableStateOf("") }
-    var type by remember { mutableStateOf(MeasurementType.CUSTOM) }
-
-    AlertDialog(
-        onDismissRequest = onCancel,
-        title = { Text(stringResource(R.string.photo_save)) },
-        text = {
-            Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                OutlinedTextField(
-                    value = name,
-                    onValueChange = { name = it },
-                    label = { Text(stringResource(R.string.photo_project_name)) },
-                    singleLine = true
-                )
-                Row(
-                    modifier = Modifier.horizontalScroll(rememberScrollState()),
-                    horizontalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    MeasurementType.values().forEach { t ->
-                        FilterChip(
-                            selected = type == t,
-                            onClick = { type = t },
-                            label = { Text(stringResource(typeLabel(t))) }
-                        )
-                    }
-                }
-            }
-        },
-        confirmButton = {
-            TextButton(onClick = { onConfirm(name, type) }, enabled = name.isNotBlank()) {
-                Text(stringResource(R.string.photo_ok))
-            }
-        },
-        dismissButton = {
-            TextButton(onClick = onCancel) { Text(stringResource(R.string.photo_cancel)) }
-        }
-    )
-}
-
-private fun typeLabel(t: MeasurementType): Int = when (t) {
-    MeasurementType.WALL -> R.string.type_wall
-    MeasurementType.DOOR -> R.string.type_door
-    MeasurementType.WINDOW -> R.string.type_window
-    MeasurementType.CLOSET -> R.string.type_closet
-    MeasurementType.ROOM -> R.string.type_room
-    MeasurementType.CUSTOM -> R.string.type_custom
 }
