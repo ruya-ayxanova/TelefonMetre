@@ -80,6 +80,7 @@ fun HomeScreen(onOpen: (String) -> Unit) {
     when (item.id) {
         "settings" -> Routes.SETTINGS
         "photo" -> Routes.PHOTO
+        "ar" -> Routes.AR
         else -> Routes.comingSoon(item.title)
     }
 )
