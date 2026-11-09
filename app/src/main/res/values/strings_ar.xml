@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ar_perm_title">Kamera izni gerekli</string>
+    <string name="ar_perm_body">AR ölçüm için kamera izni gerekir. Kamera yalnızca bu ekran açıkken kullanılır.</string>
+    <string name="ar_perm_grant">İzin ver</string>
+    <string name="ar_perm_denied">Kamera izni verilmedi. AR ölçüm bu izin olmadan çalışamaz; telefon Ayarları üzerinden izin verebilirsiniz.</string>
+    <string name="ar_err_not_supported">Bu cihaz Google ARCore\'u desteklemiyor, bu yüzden AR ölçüm kullanılamaz. Fotoğraftan ölçüm veya manuel girişi kullanabilirsiniz.</string>
+    <string name="ar_err_not_installed">Google Play Hizmetleri AR (ARCore) kurulu değil veya kurulumu reddedildi. AR ölçüm için gereklidir.</string>
+    <string name="ar_err_apk_old">Google Play Hizmetleri AR güncel değil. Play Store\'dan güncelleyin.</string>
+    <string name="ar_err_sdk_old">Uygulamadaki ARCore sürümü bu cihaz için eski. Uygulamanın güncellenmesi gerekir.</string>
+    <string name="ar_err_camera">Kamera açılamadı. Başka bir uygulama kamerayı kullanıyor olabilir.</string>
+    <string name="ar_err_generic">AR oturumu başlatılamadı.</string>
+    <string name="ar_installing">ARCore kuruluyor. Kurulum bitince bu ekrana dönün.</string>
+    <string name="ar_starting">AR başlatılıyor…</string>
+    <string name="ar_retry">Tekrar dene</string>
+    <string name="ar_status_initializing">Telefonu yavaşça hareket ettirerek çevreyi tarayın.</string>
+    <string name="ar_issue_light">Ortam çok karanlık. Daha aydınlık bir yerde deneyin.</string>
+    <string name="ar_issue_motion">Çok hızlı hareket ediyorsunuz, yavaşlayın.</string>
+    <string name="ar_issue_features">Yüzeyde yeterli doku yok. Desenli veya dokulu bir yüzeye bakın.</string>
+    <string name="ar_issue_camera">Kamera kullanılamıyor.</string>
+    <string name="ar_low_light">Işık düşük görünüyor; ölçüm hatalı olabilir.</string>
+    <string name="ar_no_surface">Hedef noktada yüzey algılanmadı. Artıyı duvar veya zemine yöneltin.</string>
+    <string name="ar_ready_wall">Duvar algılandı, nokta eklenebilir.</string>
+    <string name="ar_ready_floor">Zemin algılandı, nokta eklenebilir.</string>
+    <string name="ar_ready_ceiling">Tavan algılandı, nokta eklenebilir.</string>
+    <string name="ar_planes">Algılanan yüzey: %1$d (duvar: %2$d)</string>
+    <string name="ar_mode_distance">Uzunluk (çok kenar)</string>
+    <string name="ar_mode_rect">Dikdörtgen alan</string>
+    <string name="ar_hint_distance">Kenarın başına ve sonuna nokta ekleyin. Devam ederek birden çok kenar ölçebilirsiniz.</string>
+    <string name="ar_hint_rect">3 nokta ekleyin: sol alt, sağ alt, sağ üst köşe.</string>
+    <string name="ar_add_point">Nokta ekle</string>
+    <string name="ar_new_edge">Yeni kenar</string>
+    <string name="ar_recalibrate">Yeniden kalibre et</string>
+    <string name="ar_compare">Manuelle karşılaştır</string>
+    <string name="ar_edge">Kenar %1$d</string>
+    <string name="ar_total">Toplam</string>
+    <string name="ar_angle_warn">Kenarlar arasındaki açı %1$d°. Köşe dik değilse alan hatalı olur.</string>
+    <string name="ar_accuracy_note">AR ölçümleri yaklaşıktır; sapma yüzeye, ışığa ve cihaza bağlıdır. Önemli ölçüleri şerit metreyle doğrulayın.</string>
+    <string name="ar_compare_title">Manuel ölçümle karşılaştır</string>
+    <string name="ar_compare_label">Şerit metreyle ölçtüğünüz değer</string>
+    <string name="ar_compare_subject_total">Karşılaştırılan: toplam uzunluk</string>
+    <string name="ar_compare_subject_width">Karşılaştırılan: genişlik (ilk kenar)</string>
+    <string name="ar_compare_result">AR: %1$s · Manuel: %2$s · Fark: %3$s (%4$s%%)</string>
+</resources>
