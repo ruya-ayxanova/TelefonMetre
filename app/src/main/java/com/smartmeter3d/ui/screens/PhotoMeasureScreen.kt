@@ -121,12 +121,12 @@ fun PhotoMeasureScreen(onBack: () -> Unit, vm: PhotoMeasureViewModel = viewModel
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 FilterChip(
                     selected = vm.mode == PhotoMode.DISTANCE,
-                    onClick = { vm.setMode(PhotoMode.DISTANCE) },
+                    onClick = { vm.selectMode(PhotoMode.DISTANCE) },
                     label = { Text(stringResource(R.string.photo_mode_distance)) }
                 )
                 FilterChip(
                     selected = vm.mode == PhotoMode.RECTANGLE,
-                    onClick = { vm.setMode(PhotoMode.RECTANGLE) },
+                    onClick = { vm.selectMode(PhotoMode.RECTANGLE) },
                     label = { Text(stringResource(R.string.photo_mode_rect)) }
                 )
             }
