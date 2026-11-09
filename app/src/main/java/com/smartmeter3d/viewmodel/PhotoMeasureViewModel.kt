@@ -129,7 +129,7 @@ class PhotoMeasureViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     // ---------- nokta işlemleri ----------
-    fun setMode(newMode: PhotoMode) {
+    fun selectMode(newMode: PhotoMode) {
         if (newMode == mode) return
         mode = newMode
         clearAll()
