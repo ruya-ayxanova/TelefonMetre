@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ar_perm_title">مجوز دوربین لازم است</string>
+    <string name="ar_perm_body">برای اندازه‌گیری با AR مجوز دوربین لازم است. دوربین فقط هنگام باز بودن این صفحه استفاده می‌شود.</string>
+    <string name="ar_perm_grant">دادن مجوز</string>
+    <string name="ar_perm_denied">مجوز دوربین داده نشد. اندازه‌گیری با AR بدون این مجوز کار نمی‌کند؛ می‌توانید از تنظیمات گوشی مجوز بدهید.</string>
+    <string name="ar_err_not_supported">این دستگاه از Google ARCore پشتیبانی نمی‌کند و اندازه‌گیری با AR در دسترس نیست. می‌توانید از اندازه‌گیری از عکس یا ورود دستی استفاده کنید.</string>
+    <string name="ar_err_not_installed">Google Play Services for AR (ARCore) نصب نیست یا نصب آن رد شد. برای اندازه‌گیری با AR لازم است.</string>
+    <string name="ar_err_apk_old">Google Play Services for AR به‌روز نیست. از Play Store به‌روزرسانی کنید.</string>
+    <string name="ar_err_sdk_old">نسخه ARCore داخل برنامه برای این دستگاه قدیمی است. برنامه باید به‌روز شود.</string>
+    <string name="ar_err_camera">دوربین باز نشد. ممکن است برنامه دیگری از دوربین استفاده کند.</string>
+    <string name="ar_err_generic">نشست AR شروع نشد.</string>
+    <string name="ar_installing">ARCore در حال نصب است. پس از پایان نصب به این صفحه برگردید.</string>
+    <string name="ar_starting">AR در حال شروع…</string>
+    <string name="ar_retry">تلاش دوباره</string>
+    <string name="ar_status_initializing">گوشی را آرام حرکت دهید تا محیط اسکن شود.</string>
+    <string name="ar_issue_light">محیط خیلی تاریک است. در جای روشن‌تر امتحان کنید.</string>
+    <string name="ar_issue_motion">خیلی سریع حرکت می‌کنید، آهسته‌تر.</string>
+    <string name="ar_issue_features">سطح بافت کافی ندارد. به سطحی طرح‌دار یا بافت‌دار نگاه کنید.</string>
+    <string name="ar_issue_camera">دوربین در دسترس نیست.</string>
+    <string name="ar_low_light">نور کم به نظر می‌رسد؛ اندازه‌گیری ممکن است نادرست باشد.</string>
+    <string name="ar_no_surface">در نقطه هدف سطحی شناسایی نشد. علامت + را روی دیوار یا کف بگیرید.</string>
+    <string name="ar_ready_wall">دیوار شناسایی شد، می‌توانید نقطه اضافه کنید.</string>
+    <string name="ar_ready_floor">کف شناسایی شد، می‌توانید نقطه اضافه کنید.</string>
+    <string name="ar_ready_ceiling">سقف شناسایی شد، می‌توانید نقطه اضافه کنید.</string>
+    <string name="ar_planes">سطوح شناسایی‌شده: %1$d (دیوار: %2$d)</string>
+    <string name="ar_mode_distance">طول (چند ضلع)</string>
+    <string name="ar_mode_rect">مساحت مستطیل</string>
+    <string name="ar_hint_distance">برای ابتدا و انتهای ضلع نقطه اضافه کنید. با ادامه دادن می‌توانید چند ضلع را اندازه بگیرید.</string>
+    <string name="ar_hint_rect">۳ نقطه اضافه کنید: گوشه پایین-چپ، پایین-راست، بالا-راست.</string>
+    <string name="ar_add_point">افزودن نقطه</string>
+    <string name="ar_new_edge">ضلع جدید</string>
+    <string name="ar_recalibrate">کالیبره مجدد</string>
+    <string name="ar_compare">مقایسه با اندازه دستی</string>
+    <string name="ar_edge">ضلع %1$d</string>
+    <string name="ar_total">مجموع</string>
+    <string name="ar_angle_warn">زاویه بین اضلاع %1$d° است. اگر گوشه قائمه نباشد مساحت نادرست می‌شود.</string>
+    <string name="ar_accuracy_note">اندازه‌گیری AR تقریبی است؛ خطا به سطح، نور و دستگاه بستگی دارد. اندازه‌های مهم را با متر نواری بررسی کنید.</string>
+    <string name="ar_compare_title">مقایسه با اندازه دستی</string>
+    <string name="ar_compare_label">مقداری که با متر نواری اندازه گرفتید</string>
+    <string name="ar_compare_subject_total">مقایسه‌شده: طول کل</string>
+    <string name="ar_compare_subject_width">مقایسه‌شده: عرض (ضلع اول)</string>
+    <string name="ar_compare_result">AR: %1$s · دستی: %2$s · تفاوت: %3$s (%4$s%%)</string>
+</resources>
