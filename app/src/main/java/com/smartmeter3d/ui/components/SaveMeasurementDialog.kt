@@ -33,9 +33,13 @@ fun MeasurementType.labelRes(): Int = when (this) {
 }
 
 @Composable
-fun SaveMeasurementDialog(onConfirm: (String, MeasurementType) -> Unit, onCancel: () -> Unit) {
+fun SaveMeasurementDialog(
+    onConfirm: (String, MeasurementType) -> Unit,
+    onCancel: () -> Unit,
+    defaultType: MeasurementType = MeasurementType.CUSTOM
+) {
     var name by remember { mutableStateOf("") }
-    var type by remember { mutableStateOf(MeasurementType.CUSTOM) }
+    var type by remember { mutableStateOf(defaultType) }
 
     AlertDialog(
         onDismissRequest = onCancel,
