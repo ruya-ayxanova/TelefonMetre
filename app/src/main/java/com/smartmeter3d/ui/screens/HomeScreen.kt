@@ -17,6 +17,7 @@ import androidx.compose.material.icons.filled.Folder
 import androidx.compose.material.icons.filled.MeetingRoom
 import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Tune
 import androidx.compose.material.icons.filled.ViewInAr
 import androidx.compose.material.icons.filled.Window
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -31,22 +32,24 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.smartmeter3d.R
+import com.smartmeter3d.database.MeasurementType
 import com.smartmeter3d.navigation.Routes
 import com.smartmeter3d.ui.components.MenuCard
 
-private data class MenuItem(val id: String, @StringRes val title: Int, val icon: ImageVector)
+private data class MenuItem(val route: String, @StringRes val title: Int, val icon: ImageVector)
 
 private val menuItems = listOf(
-    MenuItem("ar", R.string.menu_ar, Icons.Filled.ViewInAr),
-    MenuItem("photo", R.string.menu_photo, Icons.Filled.PhotoCamera),
-    MenuItem("wall", R.string.menu_wall, Icons.Filled.CropPortrait),
-    MenuItem("closet", R.string.menu_closet, Icons.Filled.Checkroom),
-    MenuItem("door", R.string.menu_door, Icons.Filled.DoorFront),
-    MenuItem("window", R.string.menu_window, Icons.Filled.Window),
-    MenuItem("room", R.string.menu_room, Icons.Filled.MeetingRoom),
-    MenuItem("calculator", R.string.menu_calculator, Icons.Filled.Calculate),
-    MenuItem("projects", R.string.menu_projects, Icons.Filled.Folder),
-    MenuItem("settings", R.string.menu_settings, Icons.Filled.Settings)
+    MenuItem(Routes.AR, R.string.menu_ar, Icons.Filled.ViewInAr),
+    MenuItem(Routes.PHOTO, R.string.menu_photo, Icons.Filled.PhotoCamera),
+    MenuItem(Routes.manual(MeasurementType.WALL), R.string.menu_wall, Icons.Filled.CropPortrait),
+    MenuItem(Routes.manual(MeasurementType.CLOSET), R.string.menu_closet, Icons.Filled.Checkroom),
+    MenuItem(Routes.manual(MeasurementType.DOOR), R.string.menu_door, Icons.Filled.DoorFront),
+    MenuItem(Routes.manual(MeasurementType.WINDOW), R.string.menu_window, Icons.Filled.Window),
+    MenuItem(Routes.manual(MeasurementType.ROOM), R.string.menu_room, Icons.Filled.MeetingRoom),
+    MenuItem(Routes.manual(MeasurementType.CUSTOM), R.string.menu_custom, Icons.Filled.Tune),
+    MenuItem(Routes.CALCULATOR, R.string.menu_calculator, Icons.Filled.Calculate),
+    MenuItem(Routes.PROJECTS, R.string.menu_projects, Icons.Filled.Folder),
+    MenuItem(Routes.SETTINGS, R.string.menu_settings, Icons.Filled.Settings)
 )
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -71,20 +74,11 @@ fun HomeScreen(onOpen: (String) -> Unit) {
             horizontalArrangement = Arrangement.spacedBy(12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            items(menuItems, key = { it.id }) { item ->
+            items(menuItems, key = { it.route }) { item ->
                 MenuCard(
                     title = stringResource(item.title),
                     icon = item.icon,
-                    onClick = {
-                        onOpen(
-    when (item.id) {
-        "settings" -> Routes.SETTINGS
-        "photo" -> Routes.PHOTO
-        "ar" -> Routes.AR
-        else -> Routes.comingSoon(item.title)
-    }
-)
-                    }
+                    onClick = { onOpen(item.route) }
                 )
             }
         }
